@@ -1,5 +1,5 @@
 // Mengimpor model User untuk berinteraksi dengan database
-const User = require("../models/User");
+const User = require("../models/modelUser");
 
 module.exports = {
   // Handler untuk mendapatkan semua pengguna
