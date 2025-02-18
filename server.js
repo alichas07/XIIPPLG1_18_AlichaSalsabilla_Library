@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const usersRoutes = require('./router/routeUser')
 const booksRoutes = require('./router/routeBook')
+const categoriesRoutes = require('./router/routeCategories')
 
 //agar applikasi bisa membaca inputan dari form
 app.use(express.json()) // for parsing application/json
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 app.use('/users', usersRoutes);
 app.use('/books', booksRoutes); 
+app.use('/categories', categoriesRoutes); 
 
 
 app.listen(port, () => {
