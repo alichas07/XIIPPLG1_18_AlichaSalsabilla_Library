@@ -19,12 +19,12 @@ module.exports = {
     try {
       const reviews = await Reviews.getById(req.params.id);
       if (!reviews) {
-        return res.status(404).json({ status: false, message: "Reviews not found" });
+        return res.status(404).json({ status: false, message: "Review not found" });
       }
       res.json({
         status: true,
         data: reviews,
-        message: "Data retrieved successfully",
+        message: "Review retrieved successfully",
         method: req.method,
         url: req.url,
       });
@@ -40,7 +40,7 @@ module.exports = {
       res.status(200).json({
         status: true,
         data: { id: reviewsId, ...req.body },
-        message: "Data added successfully",
+        message: "Review added successfully",
         method: req.method,
         url: req.url,
       });
@@ -54,12 +54,12 @@ module.exports = {
     try {
       const updated = await Reviews.update(req.params.id, req.body);
       if (!updated) {
-        return res.status(404).json({ status: false, message: "Book not found" });
+        return res.status(404).json({ status: false, message: "Review not found" });
       }
       res.json({
         status: true,
         data: { id: req.params.id, ...req.body },
-        message: "Data updated successfully",
+        message: "Review updated successfully",
         method: req.method,
         url: req.url,
       });
@@ -72,11 +72,11 @@ module.exports = {
     try {
       const deleted = await Reviews.delete(req.params.id);
       if (!deleted) {
-        return res.status(404).json({ status: false, message: "Book not found" });
+        return res.status(404).json({ status: false, message: "Review not found" });
       }
       res.json({
         status: true,
-        message: "Data deleted successfully",
+        message: "Review deleted successfully",
         method: req.method,
         url: req.url,
       });
