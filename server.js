@@ -5,6 +5,7 @@ const usersRoutes = require('./router/routeUser')
 const booksRoutes = require('./router/routeBook')
 const categoriesRoutes = require('./router/routeCategories')
 const reviewsRoutes = require('./router/routeReviews')
+const loansRoutes = require('./router/routeLoans')
 
 //agar applikasi bisa membaca inputan dari form
 app.use(express.json()) // for parsing application/json
@@ -15,6 +16,7 @@ app.use('/users', usersRoutes);
 app.use('/books', booksRoutes); 
 app.use('/categories', categoriesRoutes); 
 app.use('/reviews', reviewsRoutes); 
+app.use('/loans', loansRoutes); 
 
 
 app.listen(port, () => {
